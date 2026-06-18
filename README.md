@@ -161,7 +161,7 @@ Seorang Data Analyst bertindak sebagai *Problem Solver Bisnis* dengan menerjemah
 
 ---
 
-## 💡 Tentang Penulis
+## 💡 Oleh: DATA ENTHUSIATH
 
 Halo! Saya **harrisssq**, seorang *Data Enthusiast* yang senang mengeksplorasi pengolahan data mentah menjadi keputusan bisnis yang berdampak nyata.
 
@@ -169,6 +169,7 @@ Halo! Saya **harrisssq**, seorang *Data Enthusiast* yang senang mengeksplorasi p
 **Follow More Docs:**
   
 **TikTok:** [@harrryyyst](https://www.tiktok.com/@harrryyyst)
+
 **CERTIFICATE of COMPLETION:** [CERTIFICATE of COMPLETION](https://drive.google.com/drive/folders/12r5FsE-yeFZDmRKLZicYwMLxG6rERozR?hl=ID)
 
 * 
