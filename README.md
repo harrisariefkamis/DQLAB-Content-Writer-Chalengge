@@ -1,4 +1,5 @@
 # [cite_start]✈️ Mini Project SQL & Business Insights: Uncovering Flight Delay Patterns [cite: 1]
+https://harrisariefkamis.medium.com/list/project-mini-sql-b930d93ff1aa
 
 **for successfully completing DQLab Content Writer Challenge**
 **Mini Project SQL: Analisis Pola Delay Penerbangan**. [cite_start]Proyek ini dirancang untuk mensimulasikan peran seorang **Junior Data Analyst** di sebuah maskapai penerbangan besar yang sedang menghadapi tantangan operasional berupa tingginya angka keterlambatan (*delay*) dan pembatalan (*cancellation*) penerbangan[cite: 1, 2].
