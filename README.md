@@ -1,7 +1,7 @@
 # [cite_start]✈️ Mini Project SQL & Business Insights: Uncovering Flight Delay Patterns [cite: 1]
 
-Selamat datang di repositori **Mini Project SQL: Analisis Pola Delay Penerbangan**. [cite_start]Proyek ini dirancang untuk mensimulasikan peran seorang **Junior Data Analyst** di sebuah maskapai penerbangan besar yang sedang menghadapi tantangan operasional berupa tingginya angka keterlambatan (*delay*) dan pembatalan (*cancellation*) penerbangan[cite: 1, 2].
-
+**for successfully completing DQLab Content Writer Challenge**
+**Mini Project SQL: Analisis Pola Delay Penerbangan**. [cite_start]Proyek ini dirancang untuk mensimulasikan peran seorang **Junior Data Analyst** di sebuah maskapai penerbangan besar yang sedang menghadapi tantangan operasional berupa tingginya angka keterlambatan (*delay*) dan pembatalan (*cancellation*) penerbangan[cite: 1, 2].
 [cite_start]Proyek ini berfokus pada pembersihan data (*data cleaning*), manipulasi waktu, agregasi data, hingga penarikan wawasan bisnis (*business insights*)[cite: 4, 15, 16].
 
 ---
@@ -45,7 +45,7 @@ Beberapa kolom kunci yang dianalisis meliputi:
 * [cite_start]`actual_departure`: Waktu keberangkatan riil di lapangan[cite: 21].
 * [cite_start]`departure_delay`: Durasi keterlambatan penerbangan dalam satuan menit[cite: 21].
 * [cite_start]`origin`: Bandara asal keberangkatan[cite: 34].
-* [cite_start]`cancelled`: Status pembatalan penerbangan (1 = Batal, 0 = Berangkat).
+* [cite_start]`cancelled`: Status pembatalan penerbangan (1 = Batal, 0 = Berangkat)[cite: 26].
 
 ---
 
@@ -59,3 +59,125 @@ Beberapa kolom kunci yang dianalisis meliputi:
 SELECT * FROM `projectlharris.Data_Flight.data_flight` 
 WHERE actual_departure IS NULL 
    OR departure_delay IS NULL;
+
+```
+
+### Step 2: Mengukur Performa Maskapai (Rata-Rata Delay)
+
+Menghitung rata-rata keterlambatan per maskapai untuk mengevaluasi kualitas layanan ketepatan waktu. Hanya menghitung penerbangan yang sukses berangkat (`cancelled = 0`).
+
+```sql
+SELECT airline, ROUND(AVG(departure_delay), 2) AS avg_delay 
+FROM `Data_Flight.data_flight` 
+WHERE cancelled = 0 
+GROUP BY airline 
+ORDER BY avg_delay DESC;
+
+```
+
+### Step 3: Mengungkap Pola Delay Berdasarkan Waktu
+
+Mengekstrak jam dari waktu keberangkatan menggunakan `EXTRACT(HOUR)` untuk mengelompokkannya menjadi Pagi (*Morning*), Siang (*Afternoon*), dan Malam (*Evening*).
+
+```sql
+SELECT 
+  CASE
+    WHEN EXTRACT(HOUR FROM scheduled_departure) BETWEEN 5 AND 11 THEN 'Morning'
+    WHEN EXTRACT(HOUR FROM scheduled_departure) BETWEEN 12 AND 17 THEN 'Afternoon'
+    ELSE 'Evening'
+  END AS time_of_day,
+  ROUND(AVG(departure_delay), 2) AS avg_delay
+FROM `Data_Flight.data_flight`
+WHERE cancelled = 0
+GROUP BY time_of_day
+ORDER BY avg_delay DESC;
+
+```
+
+### Step 4: Menemukan Bandara dengan Risiko Delay Tinggi
+
+Mengidentifikasi bandara asal (`origin`) yang paling sering menyumbang penundaan jadwal akibat penumpukan atau kepadatan operasional.
+
+```sql
+SELECT origin, ROUND(AVG(departure_delay), 2) AS avg_delay
+FROM `Data_Flight.data_flight`
+WHERE cancelled = 0
+GROUP BY origin
+ORDER BY avg_delay DESC;
+
+```
+
+### Step 5: Analisis Tingkat Pembatalan Penerbangan
+
+Menghitung rasio pembatalan (*cancel rate percent*) per maskapai menggunakan kombinasi fungsi `COUNT()` dan `SUM()` sebagai indikator risiko reputasi maskapai.
+
+```sql
+SELECT 
+  airline,
+  COUNT(*) AS total_flights,
+  SUM(cancelled) AS total_cancelled,
+  ROUND(SUM(cancelled) * 100.0 / COUNT(*), 2) AS cancel_rate_percent
+FROM `Data_Flight.data_flight`
+GROUP BY airline
+ORDER BY cancel_rate_percent DESC;
+
+```
+
+### Step 6: Summary Dashboard View (Metrik Konsolidasi)
+
+Menyatukan semua metrik operasional utama ke dalam satu query tunggal yang siap dihubungkan ke *data visualization tools*.
+
+```sql
+SELECT 
+  airline,
+  ROUND(AVG(departure_delay), 2) AS avg_delay,
+  SUM(cancelled) AS cancelled_flights,
+  COUNT(*) AS total_flights,
+  ROUND(SUM(cancelled) * 100.0 / COUNT(*), 2) AS cancel_rate_percent
+FROM `Data_Flight.data_flight`
+GROUP BY airline
+ORDER BY avg_delay DESC;
+
+```
+
+---
+
+## 📈 Wawasan Bisnis & Rekomendasi (Key Takeaways)
+
+Seorang Data Analyst bertindak sebagai *Problem Solver Bisnis* dengan menerjemahkan baris query di atas menjadi langkah taktis operasional:
+
+* 
+**Optimasi Jadwal (Time of Day)**: Membantu manajemen melihat slot jam penumpukan delay (misal: efek domino keterlambatan dari pagi ke malam hari) untuk menyusun ulang *buffer time* penerbangan.
+
+
+* 
+**Evaluasi Vendor & Bandara**: Menjadi data dasar yang kuat bagi tim operasional untuk melakukan penyesuaian slot terbang atau negosiasi ulang layanan dengan otoritas bandara terkait.
+
+
+* 
+**Mitigasi Risiko Reputasi**: Menemukan akar masalah internal (teknis armada, kesiapan kru) pada maskapai yang memiliki *cancel rate* tinggi guna meminimalisir keluhan pelanggan.
+
+
+
+---
+
+## 💡 Tentang Penulis
+
+Halo! Saya **harrisssq**, seorang *Data Enthusiast* yang senang mengeksplorasi pengolahan data mentah menjadi keputusan bisnis yang berdampak nyata.
+
+* 
+**Follow More Docs:**
+**TikTok:** [@harrryyyst](https://www.tiktok.com/@harrryyyst) 
+**Mediun** [mediun](
+**CERTIFICATE of COMPLETION**[CERTIFICATE of COMPLETION](https://drive.google.com/drive/folders/12r5FsE-yeFZDmRKLZicYwMLxG6rERozR?hl=ID)
+
+* 
+**Belajar Data Analytics:** Yuk, asah kemampuan *hands-on* kamu menggunakan studi kasus nyata industri seperti ini bersama [DQLab](https://dqlab.id).
+
+
+
+*Jangan lupa berikan ⭐ Star jika proyek latihan ini bermanfaat untuk portofolio kamu!* 
+
+```
+
+```
