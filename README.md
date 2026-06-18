@@ -167,8 +167,9 @@ Halo! Saya **harrisssq**, seorang *Data Enthusiast* yang senang mengeksplorasi p
 
 * 
 **Follow More Docs:**
-**TikTok:** [@harrryyyst](https://www.tiktok.com/@harrryyyst) 
-**CERTIFICATE of COMPLETION**[CERTIFICATE of COMPLETION](https://drive.google.com/drive/folders/12r5FsE-yeFZDmRKLZicYwMLxG6rERozR?hl=ID)
+  
+**TikTok:** [@harrryyyst](https://www.tiktok.com/@harrryyyst)
+**CERTIFICATE of COMPLETION:** [CERTIFICATE of COMPLETION](https://drive.google.com/drive/folders/12r5FsE-yeFZDmRKLZicYwMLxG6rERozR?hl=ID)
 
 * 
 **Belajar Data Analytics:** Yuk, asah kemampuan *hands-on* kamu menggunakan studi kasus nyata industri seperti ini bersama [DQLab](https://dqlab.id).
