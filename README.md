@@ -146,17 +146,9 @@ ORDER BY avg_delay DESC;
 
 Seorang Data Analyst bertindak sebagai *Problem Solver Bisnis* dengan menerjemahkan baris query di atas menjadi langkah taktis operasional:
 
-* 
-**Optimasi Jadwal (Time of Day)**: Membantu manajemen melihat slot jam penumpukan delay (misal: efek domino keterlambatan dari pagi ke malam hari) untuk menyusun ulang *buffer time* penerbangan.
-
-
-* 
-**Evaluasi Vendor & Bandara**: Menjadi data dasar yang kuat bagi tim operasional untuk melakukan penyesuaian slot terbang atau negosiasi ulang layanan dengan otoritas bandara terkait.
-
-
-* 
-**Mitigasi Risiko Reputasi**: Menemukan akar masalah internal (teknis armada, kesiapan kru) pada maskapai yang memiliki *cancel rate* tinggi guna meminimalisir keluhan pelanggan.
-
+* **Optimasi Jadwal (Time of Day)**: Membantu manajemen melihat slot jam penumpukan delay (misal: efek domino keterlambatan dari pagi ke malam hari) untuk menyusun ulang *buffer time* penerbangan.
+* **Evaluasi Vendor & Bandara**: Menjadi data dasar yang kuat bagi tim operasional untuk melakukan penyesuaian slot terbang atau negosiasi ulang layanan dengan otoritas bandara terkait.
+* **Mitigasi Risiko Reputasi**: Menemukan akar masalah internal (teknis armada, kesiapan kru) pada maskapai yang memiliki *cancel rate* tinggi guna meminimalisir keluhan pelanggan.
 
 
 ---
