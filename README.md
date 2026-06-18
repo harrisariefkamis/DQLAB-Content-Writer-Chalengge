@@ -168,7 +168,6 @@ Halo! Saya **harrisssq**, seorang *Data Enthusiast* yang senang mengeksplorasi p
 * 
 **Follow More Docs:**
 **TikTok:** [@harrryyyst](https://www.tiktok.com/@harrryyyst) 
-**Mediun** [mediun](
 **CERTIFICATE of COMPLETION**[CERTIFICATE of COMPLETION](https://drive.google.com/drive/folders/12r5FsE-yeFZDmRKLZicYwMLxG6rERozR?hl=ID)
 
 * 
