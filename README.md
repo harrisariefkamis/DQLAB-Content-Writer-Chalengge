@@ -1,4 +1,4 @@
-# [cite_start]✈️ Mini Project SQL & Business Insights: Uncovering Flight Delay Patterns [cite: 1]
+# ✈️ Mini Project SQL & Business Insights: Uncovering Flight Delay Patterns [cite: 1]
 https://harrisariefkamis.medium.com/list/project-mini-sql-b930d93ff1aa
 
 **for successfully completing DQLab Content Writer Challenge**
